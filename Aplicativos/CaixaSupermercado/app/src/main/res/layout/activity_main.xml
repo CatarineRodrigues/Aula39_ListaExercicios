@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imagemCarrinho"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginLeft="@dimen/margem_16"
+        android:contentDescription="@string/descricao_imagem"
+        android:src="@drawable/imagem_carrinho"
+        app:layout_constraintBottom_toTopOf="@id/etNomeProduto"
+        app:layout_constraintEnd_toStartOf="@id/mensagem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginTop="@dimen/margem_16"
+        android:layout_marginStart="@dimen/margem_16" />
+
+    <TextView
+        android:id="@+id/mensagem"
+        android:layout_width="@dimen/largura_200"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_16"
+        android:layout_marginRight="@dimen/margem_16"
+        android:text="@string/mensagem"
+        android:textAlignment="gravity"
+        android:textSize="@dimen/font_size_12"
+        app:layout_constraintBottom_toBottomOf="@id/imagemCarrinho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imagemCarrinho"
+        app:layout_constraintTop_toTopOf="@id/imagemCarrinho" />
+
+    <EditText
+        android:id="@+id/etNomeProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_16"
+        android:layout_marginRight="@dimen/margem_16"
+        android:hint="@string/nomeProduto"
+        app:layout_constraintBottom_toTopOf="@id/etQtdProduto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagemCarrinho" />
+
+    <EditText
+        android:id="@+id/etQtdProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_16"
+        android:layout_marginRight="@dimen/margem_16"
+        android:hint="@string/qntProduto"
+        app:layout_constraintBottom_toTopOf="@id/etValorUnitario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNomeProduto" />
+
+    <EditText
+        android:id="@+id/etValorUnitario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_16"
+        android:layout_marginRight="@dimen/margem_16"
+        android:hint="@string/valorProduto"
+        app:layout_constraintBottom_toTopOf="@id/btnCalcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etQtdProduto" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_16"
+        android:layout_marginRight="@dimen/margem_16"
+        android:text="@string/btnMensag"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etValorUnitario" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
