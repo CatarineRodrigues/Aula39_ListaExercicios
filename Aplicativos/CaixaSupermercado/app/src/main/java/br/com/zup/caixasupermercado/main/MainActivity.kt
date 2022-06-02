@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import br.com.zup.caixasupermercado.constants.PRODUTO
 import br.com.zup.caixasupermercado.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         binding.btnCalcular.setOnClickListener {
             enviarDados()
         }
@@ -26,20 +26,38 @@ class MainActivity : AppCompatActivity() {
 
     private fun enviarDados() {
         recuperarDadosDigitados()
+        if(!verificarCampos()) {
+            val produto = Produto(
+                qntProduto.toInt(),
+                valorProduto.toDouble()
+            )
 
-        val produto = Produto(
-            qntProduto.toInt(),
-            valorProduto.toDouble()
-        )
-
-        val intent = Intent(this, DetalheCompra::class.java).apply {
-            putExtra("Produto", produto)
+            val intent = Intent(this, DetalheCompra::class.java).apply {
+                putExtra(PRODUTO, produto)
+            }
+            startActivity(intent)
+            limparCampos()
         }
-        startActivity(intent)
     }
 
     private fun recuperarDadosDigitados() {
+        this.nomeProduto = binding.etNomeProduto.text.toString()
         this.qntProduto = binding.etQtdProduto.text.toString()
         this.valorProduto = binding.etValorUnitario.text.toString()
+    }
+
+    private fun limparCampos() {
+        binding.etQtdProduto.text.clear()
+        binding.etQtdProduto.text.clear()
+        binding.etValorUnitario.text.clear()
+    }
+
+    private fun verificarCampos(): Boolean {
+        return if (qntProduto.isEmpty() && valorProduto.isEmpty()) {
+            Toast.makeText(this, "Preencher valores antes", Toast.LENGTH_LONG).show()
+            true
+        } else {
+            false
+        }
     }
 }

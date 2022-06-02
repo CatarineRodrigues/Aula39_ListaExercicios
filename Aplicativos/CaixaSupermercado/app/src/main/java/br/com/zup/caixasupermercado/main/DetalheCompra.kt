@@ -1,9 +1,12 @@
 package br.com.zup.caixasupermercado.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import br.com.zup.caixasupermercado.R
+import br.com.zup.caixasupermercado.constants.PRODUTO
+import br.com.zup.caixasupermercado.constants.VALOR_TOTAL
 import br.com.zup.caixasupermercado.databinding.ActivityDetalheCompraBinding
 
 class DetalheCompra : AppCompatActivity() {
@@ -18,10 +21,16 @@ class DetalheCompra : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.titulo_detalhes_compra)
 
         recuperarExibirDados()
+
+        binding.btnRefazer.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            this.finish()
+        }
     }
 
     private fun recuperarExibirDados(){
-        val produto = intent.getParcelableExtra<Produto>("Produto")
+        val produto = intent.getParcelableExtra<Produto>(PRODUTO)
         if (produto != null){
             val valorCompra = calcularTotalCompra(produto.getQuantidade(),produto.getValorUnitario())
             exibirTotalCompra(valorCompra)
@@ -31,8 +40,7 @@ class DetalheCompra : AppCompatActivity() {
     private fun calcularTotalCompra(qnt: Int, valor: Double) = qnt * valor
 
     private fun exibirTotalCompra(valor: Double){
-//        "%.2".format(valor.toString())
-        binding.tvTotalCompra.text = "O VALOR TOTAL É DE: R$ $valor"
+        binding.tvTotalCompra.text = "$VALOR_TOTAL $valor"
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
