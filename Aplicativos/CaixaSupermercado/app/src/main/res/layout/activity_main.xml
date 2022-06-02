@@ -11,19 +11,21 @@
         android:id="@+id/imagemCarrinho"
         android:layout_width="125dp"
         android:layout_height="125dp"
+        android:layout_marginStart="@dimen/margem_16"
         android:layout_marginLeft="@dimen/margem_16"
+        android:layout_marginTop="@dimen/tamanho_50"
+        android:layout_marginBottom="@dimen/tamanho_50"
         android:contentDescription="@string/descricao_imagem"
         android:src="@drawable/imagem_carrinho"
         app:layout_constraintBottom_toTopOf="@id/etNomeProduto"
         app:layout_constraintEnd_toStartOf="@id/mensagem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_goneMarginTop="@dimen/margem_16"
-        android:layout_marginStart="@dimen/margem_16" />
+        app:layout_goneMarginTop="@dimen/margem_16" />
 
     <TextView
         android:id="@+id/mensagem"
-        android:layout_width="@dimen/largura_200"
+        android:layout_width="@dimen/tamanho_150"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margem_16"
         android:layout_marginRight="@dimen/margem_16"
@@ -37,22 +39,21 @@
 
     <EditText
         android:id="@+id/etNomeProduto"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margem_16"
-        android:layout_marginRight="@dimen/margem_16"
+        android:layout_margin="@dimen/margem_16"
+        android:layout_marginTop="@dimen/tamanho_50"
         android:hint="@string/nomeProduto"
         app:layout_constraintBottom_toTopOf="@id/etQtdProduto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imagemCarrinho" />
+        app:layout_constraintTop_toTopOf="@id/etQtdProduto" />
 
     <EditText
         android:id="@+id/etQtdProduto"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margem_16"
-        android:layout_marginRight="@dimen/margem_16"
+        android:layout_margin="@dimen/margem_16"
         android:hint="@string/qntProduto"
         app:layout_constraintBottom_toTopOf="@id/etValorUnitario"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,10 +62,9 @@
 
     <EditText
         android:id="@+id/etValorUnitario"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margem_16"
-        android:layout_marginRight="@dimen/margem_16"
+        android:layout_margin="@dimen/margem_16"
         android:hint="@string/valorProduto"
         app:layout_constraintBottom_toTopOf="@id/btnCalcular"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margem_16"
+        android:layout_marginTop="@dimen/margem_16"
         android:layout_marginRight="@dimen/margem_16"
+        android:layout_marginBottom="150dp"
         android:text="@string/btnMensag"
         android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"
