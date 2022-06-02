@@ -49,13 +49,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun limparCampos() {
-        binding.etQtdProduto.text.clear()
+        binding.etNomeProduto.text.clear()
         binding.etQtdProduto.text.clear()
         binding.etValorUnitario.text.clear()
     }
 
     private fun verificarCampos(): Boolean {
-        return if (qntProduto.isEmpty() && valorProduto.isEmpty()) {
+        return if (qntProduto.isEmpty() || valorProduto.isEmpty()) {
             Toast.makeText(this, MSG_PREENCHER_VALORES, Toast.LENGTH_LONG).show()
             true
         } else {
