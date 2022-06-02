@@ -8,6 +8,7 @@ import br.com.zup.caixasupermercado.R
 import br.com.zup.caixasupermercado.constants.PRODUTO
 import br.com.zup.caixasupermercado.constants.VALOR_TOTAL
 import br.com.zup.caixasupermercado.databinding.ActivityDetalheCompraBinding
+import br.com.zup.caixasupermercado.model.Produto
 
 class DetalheCompra : AppCompatActivity() {
     private lateinit var binding: ActivityDetalheCompraBinding

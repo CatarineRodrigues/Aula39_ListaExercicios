@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import br.com.zup.caixasupermercado.constants.MSG_PREENCHER_VALORES
 import br.com.zup.caixasupermercado.constants.PRODUTO
 import br.com.zup.caixasupermercado.databinding.ActivityMainBinding
+import br.com.zup.caixasupermercado.model.Produto
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun verificarCampos(): Boolean {
         return if (qntProduto.isEmpty() && valorProduto.isEmpty()) {
-            Toast.makeText(this, "Preencher valores antes", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, MSG_PREENCHER_VALORES, Toast.LENGTH_LONG).show()
             true
         } else {
             false

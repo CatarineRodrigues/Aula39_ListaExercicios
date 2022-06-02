@@ -1,4 +1,4 @@
-package br.com.zup.caixasupermercado.main
+package br.com.zup.caixasupermercado.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
