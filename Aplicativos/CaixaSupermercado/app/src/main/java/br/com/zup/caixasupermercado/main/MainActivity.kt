@@ -18,12 +18,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         binding.btnCalcular.setOnClickListener {
             enviarDados()
-
         }
     }
-
 
     private fun enviarDados() {
         recuperarDadosDigitados()
@@ -40,10 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun recuperarDadosDigitados() {
-        this.qntProduto = binding.etQtdProduto?.text.toString()
-        this.valorProduto = binding.etValorUnitario?.text.toString()
-
+        this.qntProduto = binding.etQtdProduto.text.toString()
+        this.valorProduto = binding.etValorUnitario.text.toString()
     }
-
-
 }

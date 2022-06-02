@@ -2,6 +2,8 @@ package br.com.zup.caixasupermercado.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import br.com.zup.caixasupermercado.R
 import br.com.zup.caixasupermercado.databinding.ActivityDetalheCompraBinding
 
 class DetalheCompra : AppCompatActivity() {
@@ -11,6 +13,9 @@ class DetalheCompra : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetalheCompraBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = getString(R.string.titulo_detalhes_compra)
 
         recuperarExibirDados()
     }
@@ -27,6 +32,14 @@ class DetalheCompra : AppCompatActivity() {
 
     private fun exibirTotalCompra(valor: Double){
 //        "%.2".format(valor.toString())
-        binding.tvTotalCompra.text = valor.toString()
+        binding.tvTotalCompra.text = "O VALOR TOTAL É DE: R$ $valor"
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            this.finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

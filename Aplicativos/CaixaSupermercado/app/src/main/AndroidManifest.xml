@@ -14,7 +14,7 @@
         android:theme="@style/Theme.CaixaSupermercado"
         tools:targetApi="31" >
         <activity
-            android:name=".DetalheCompra"
+            android:name=".main.DetalheCompra"
             android:exported="false" />
         <activity
             android:name=".main.MainActivity"
