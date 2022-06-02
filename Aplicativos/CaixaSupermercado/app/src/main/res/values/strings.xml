@@ -6,4 +6,5 @@
     <string name="qntProduto">Quantidade do produto</string>
     <string name="valorProduto">Valor (unitário) do produto</string>
     <string name="btnMensag">Calcular</string>
+    <string name="mensagem_valor_total">O VALOR TOTAL É DE: R$ 00,00</string>
 </resources>

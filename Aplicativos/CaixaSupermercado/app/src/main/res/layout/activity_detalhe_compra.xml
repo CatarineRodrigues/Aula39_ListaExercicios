@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margem_16"
+    tools:context=".main.DetalheCompra">
+
+    <ImageView
+        android:id="@+id/imagemCarrinho"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="@dimen/margem_16"
+        android:layout_marginLeft="@dimen/margem_16"
+        android:layout_marginTop="@dimen/tamanho_50"
+        android:layout_marginBottom="@dimen/tamanho_50"
+        android:contentDescription="@string/descricao_imagem"
+        android:src="@drawable/imagem_carrinho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_totalCompra"
+        app:layout_goneMarginTop="@dimen/margem_16" />
+
+    <TextView
+        android:id="@+id/tv_totalCompra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mensagem_valor_total"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imagemCarrinho"
+        app:layout_constraintBottom_toTopOf="@id/btnRefazer"/>
+
+    <Button
+        android:id="@+id/btnRefazer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem_16"
+        android:layout_marginRight="@dimen/margem_16"
+        android:layout_marginBottom="@dimen/tamanho_150"
+        android:text="@string/btnMensag"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_totalCompra" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

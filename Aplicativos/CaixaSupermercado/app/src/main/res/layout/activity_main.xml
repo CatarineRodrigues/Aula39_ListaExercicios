@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".main.MainActivity">
 
     <ImageView
         android:id="@+id/imagemCarrinho"
@@ -44,6 +44,7 @@
         android:layout_margin="@dimen/margem_16"
         android:layout_marginTop="@dimen/tamanho_50"
         android:hint="@string/nomeProduto"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@id/etQtdProduto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margem_16"
         android:hint="@string/qntProduto"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@id/etValorUnitario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margem_16"
         android:hint="@string/valorProduto"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@id/btnCalcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
