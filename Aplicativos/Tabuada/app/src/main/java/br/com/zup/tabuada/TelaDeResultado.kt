@@ -12,6 +12,7 @@ class TelaDeResultado : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTelaDeResultadoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        recuperarNumeroEnviado()
 
     }
 
@@ -19,11 +20,23 @@ class TelaDeResultado : AppCompatActivity() {
         val numero = intent.getStringExtra("Numero")
         if (numero != null) {
             calcularTabuada(numero.toInt())
+            exibirTabuada(numero.toInt())
         }
 
     }
 
-    private fun calcularTabuada(numeroTabuada: Int){
+    private fun calcularTabuada(numeroTabuada: Int):Int {
+        var resultado = 0
+        for (i in 0..10) {
+            resultado = numeroTabuada * i
+        }
+        return resultado
+    }
+
+    private fun exibirTabuada(numero: Int) {
+        for (i in 0..10){
+            binding.tvCalculoTabuada.text = "$numero x $i = ${numero*i}"
+        }
 
     }
 
