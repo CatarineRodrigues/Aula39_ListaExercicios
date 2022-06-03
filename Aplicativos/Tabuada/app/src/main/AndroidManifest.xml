@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Tabuada"
         tools:targetApi="31">
         <activity
+            android:name=".TelaDeResultado"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
