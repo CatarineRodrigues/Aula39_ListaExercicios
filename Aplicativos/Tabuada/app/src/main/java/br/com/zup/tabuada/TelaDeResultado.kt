@@ -14,7 +14,22 @@ class TelaDeResultado : AppCompatActivity() {
         setContentView(binding.root)
 
     }
+
+    private fun recuperarNumeroEnviado(){
+        val numero = intent.getStringExtra("Numero")
+        if (numero != null) {
+            calcularTabuada(numero.toInt())
+        }
+
+    }
+
+    private fun calcularTabuada(numeroTabuada: Int){
+
+    }
+
+
 //    TODO criar fun para recuperar numero digitado
+    // TODO função calcular tabuada
 //    TODO criar fun para enviar clic botão
 
 }
