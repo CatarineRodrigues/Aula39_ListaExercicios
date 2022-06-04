@@ -3,6 +3,9 @@
     <string name="msg_vamos_calcular">Vamos calcular a tabuada, digite um valor e daremos a você a tabuada do número escolhido!</string>
     <string name="digite_valor">Digite o valor da tabuada</string>
     <string name="calcular_tabuada">Calcular Tabuada</string>
-    <string name="tabuada_do_2">Tabuada do 2</string>
+    <string name="recalcular_tabuada">Recalcular Tabuada</string>
+    <string name="tabuada_do_2">Tabuada do ?</string>
     <string name="calculo_da_tabuada">Calculo da Tabuada</string>
+    <string name="titulo_resultado">Resultado</string>
+    <string name="MSG_PREENCHER_VALORES">"Insira um número para calcular a tabuada primeiro"</string>
 </resources>

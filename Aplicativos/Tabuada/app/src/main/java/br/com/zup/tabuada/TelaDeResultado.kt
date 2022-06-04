@@ -1,7 +1,9 @@
 package br.com.zup.tabuada
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import br.com.zup.tabuada.databinding.ActivityTelaDeResultadoBinding
 
 class TelaDeResultado : AppCompatActivity() {
@@ -12,37 +14,51 @@ class TelaDeResultado : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTelaDeResultadoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = getString(R.string.titulo_resultado)
+
         recuperarNumeroEnviado()
 
+        binding.btnRecalcular.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            this.finish()
+        }
     }
 
-    private fun recuperarNumeroEnviado(){
+    private fun recuperarNumeroEnviado() {
         val numero = intent.getStringExtra("Numero")
         if (numero != null) {
-            calcularTabuada(numero.toInt())
-            exibirTabuada(numero.toInt())
+            exibirNumeroTabuada(numero.toInt())
+            exibirTabuadaCalculada(numero.toInt())
         }
-
     }
 
-    private fun calcularTabuada(numeroTabuada: Int):Int {
-        var resultado = 0
-        for (i in 0..10) {
-            resultado = numeroTabuada * i
-        }
-        return resultado
+    private fun exibirNumeroTabuada(numero: Int){
+        binding.tvTabuadaDoNumero.text = "Tabuada do $numero"
     }
 
-    private fun exibirTabuada(numero: Int) {
-        for (i in 0..10){
-            binding.tvCalculoTabuada.text = "$numero x $i = ${numero*i}"
-        }
+    private fun exibirTabuadaCalculada(numero: Int) {
 
+        binding.tvCalculoTabuada.text = " $numero x 0 = ${numero * 0}" +
+                "\n $numero x 1 = ${numero * 1}" +
+                "\n $numero x 2 = ${numero * 2}" +
+                "\n $numero x 3 = ${numero * 3}" +
+                "\n $numero x 4 = ${numero * 4}" +
+                "\n $numero x 5 = ${numero * 5}" +
+                "\n $numero x 6 = ${numero * 6}" +
+                "\n $numero x 7 = ${numero * 7}" +
+                "\n $numero x 8 = ${numero * 8}" +
+                "\n $numero x 9 = ${numero * 9}" +
+                "\n $numero x 10 = ${numero * 10}"
     }
 
-
-//    TODO criar fun para recuperar numero digitado
-    // TODO função calcular tabuada
-//    TODO criar fun para enviar clic botão
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            this.finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }

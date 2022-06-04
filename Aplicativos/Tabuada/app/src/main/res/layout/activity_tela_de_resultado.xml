@@ -27,18 +27,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTabuadaDoNumero"
-        app:layout_constraintBottom_toTopOf="@id/btnCalcular" />
+        app:layout_constraintBottom_toTopOf="@id/btnRecalcular"
+        android:gravity="center_horizontal" />
 
     <Button
-        android:id="@+id/btnCalcular"
+        android:id="@+id/btnRecalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margem_16"
-        android:text="@string/calcular_tabuada"
+        android:text="@string/recalcular_tabuada"
         android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCalculoTabuada" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
