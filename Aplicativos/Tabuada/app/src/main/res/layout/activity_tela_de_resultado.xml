@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margem_16"
         android:text="@string/tabuada_do_2"
+        android:textSize="@dimen/fonte_16"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/tvCalculoTabuada"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,12 +25,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margem_16"
+        android:gravity="center_horizontal"
         android:text="@string/calculo_da_tabuada"
+        android:textSize="@dimen/fonte_14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btnRecalcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTabuadaDoNumero"
-        app:layout_constraintBottom_toTopOf="@id/btnRecalcular"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@id/tvTabuadaDoNumero" />
 
     <Button
         android:id="@+id/btnRecalcular"

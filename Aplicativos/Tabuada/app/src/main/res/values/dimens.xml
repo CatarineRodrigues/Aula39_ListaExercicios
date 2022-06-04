@@ -2,4 +2,6 @@
 <resources>
     <dimen name="margem_16">16dp</dimen>
     <dimen name="fonte_12">12sp</dimen>
+    <dimen name="fonte_16">16sp</dimen>
+    <dimen name="fonte_14sp">14sp</dimen>
 </resources>
