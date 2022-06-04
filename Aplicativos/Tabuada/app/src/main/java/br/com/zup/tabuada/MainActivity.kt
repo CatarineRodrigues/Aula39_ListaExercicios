@@ -48,11 +48,4 @@ class MainActivity : AppCompatActivity() {
             false
         }
     }
-
-
-
-// ok   TODO criar fun para recuperar numero digitado
-// ok   TODO criar fun para enviar numero
-//    TODO criar validação de dados
-//    TODO limpar dados
 }
